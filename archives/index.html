@@ -429,6 +429,41 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2023/10/07/git-stash/">
+                
+                <span class="abstract-title-text">Git：召回丢失的git stash内容</span>
+            </a>
+            <div class="abstract-content">
+                背景因为手欠把备份的stash内容提前删除了，本地的代码还还原了，好几天的开发成功付之一炬。灵机一动，git是否存在找回误删代码的功能呢？于是有了本文。
+方案主要是使用fsck命令：
+1git fsck --lost-found
+
+此命令会列出所有 dangling commit，包含一个 commitId，如果太过久远不属于 dangling commit，就不能找回了。由于没有列出stash时的描述，需要逐个尝试，使用show命令展示内容：
+1git show commitId
+
+找到后应用即可：
+1git stash apply commitId
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/10/07">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/10/07</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2023/09/27/hello-world/">
                 
                 <span class="abstract-title-text">Hello World</span>
@@ -460,18 +495,21 @@ Run server1$ hexo ...
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2023/09/27/love/">
+            <a class="abstract-title" href="/2023/09/27/Xcode15/">
                 
-                <span class="abstract-title-text">❤️皮皮</span>
+                <span class="abstract-title-text">升级到Xcode15</span>
             </a>
             <div class="abstract-content">
-                by hh
+                动机苹果要求2024年4月起上架的iOS应用使用Xcode15编译，正好有时间，决定先尝试升级到Xcode15，有问题提前解决。结果确实遇到一些问题，现在把解决方案记录下来。
+libstdc++首先是报错找不到libstdc++.6.0.9.dylib。这个不新鲜，最近几个大版本以来，每次更新Xcode后，都会有这个报错。以往都是按照网上的方案，把这个被苹果移除的库在添加到对应的文件架中，大概四个文件夹，十多个文件，不过使用脚本，倒是不麻烦。
+但是此次苹果修改了目录结构，其中一个目录被放进了模拟器目录下，也就是每一个模拟器都需要拷贝一次，再采取拷贝文件的方式的话，难以接受。
+经过调研，项...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/09/27">
+                <div class="abstract-date" title="Last updated: 2023/10/07">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/09/27</span>
                 </div>
                 <!-- tags -->
@@ -593,7 +631,14 @@ Run server1$ hexo ...
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
         
         
     
@@ -602,7 +647,7 @@ Run server1$ hexo ...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 2
+        Total : 3
         </div>
         <!-- search  -->
         
@@ -618,6 +663,12 @@ Run server1$ hexo ...
             
         
         <li class="archive-post-item">
+            <span class="archive-post-date">10/07</span>
+            <a class="archive-post-title" href="/2023/10/07/git-stash/">Git：召回丢失的git stash内容</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
             <span class="archive-post-date">09/27</span>
             <a class="archive-post-title" href="/2023/09/27/hello-world/">Hello World</a>
         </li>
@@ -625,7 +676,7 @@ Run server1$ hexo ...
         
         <li class="archive-post-item">
             <span class="archive-post-date">09/27</span>
-            <a class="archive-post-title" href="/2023/09/27/love/">❤️皮皮</a>
+            <a class="archive-post-title" href="/2023/09/27/Xcode15/">升级到Xcode15</a>
         </li>
     
     </div>
