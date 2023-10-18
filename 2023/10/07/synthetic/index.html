@@ -19,18 +19,22 @@
         <meta name="keywords" content="Code,iOS,Game,Develop,Android">
     
     <meta name="description" content="">
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://lhead.github.io/archives/2023/10/index.html">
+    <meta name="description" content="Mac OS根目录Mac OS 自从10.15开始不允许在根目录添加&#x2F;修改文件了。当时我的解决方案是关闭系统保护SIP，并在根目录创建所需目录的软链（&#x2F;data），使用上倒是没什么问题，不过毕竟方法略微繁琐，并且也不是苹果推荐的做法。正好升级旧MacBook时软链文件被移除了，决定这次使用苹果推荐的方案。 synthetic.confsynthetic.conf文件是官方提供的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="爬坑记录：Mac根目录添加软链，修改synthetic.conf导致无法进入系统">
+<meta property="og:url" content="http://lhead.github.io/2023/10/07/synthetic/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Mac OS根目录Mac OS 自从10.15开始不允许在根目录添加&#x2F;修改文件了。当时我的解决方案是关闭系统保护SIP，并在根目录创建所需目录的软链（&#x2F;data），使用上倒是没什么问题，不过毕竟方法略微繁琐，并且也不是苹果推荐的做法。正好升级旧MacBook时软链文件被移除了，决定这次使用苹果推荐的方案。 synthetic.confsynthetic.conf文件是官方提供的">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-10-07T07:01:42.216Z">
+<meta property="article:modified_time" content="2023-10-18T08:52:16.250Z">
 <meta property="article:author" content="lhead">
 <meta name="twitter:card" content="summary">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="/assets/favicon.ico">
     
-    <title>lhead&#39;s Studio</title>
+    <title>爬坑记录：Mac根目录添加软链，修改synthetic.conf导致无法进入系统 · lhead&#39;s Studio</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -218,6 +222,8 @@
         }
     </script>
     
+        <body class="post-body">
+    
         <!-- header -->
         <header class="header header-mobile">
     <!-- top read progress line -->
@@ -247,6 +253,17 @@
     </div>
     <!-- toggle banner for post layout -->
     
+        
+            <div class="banner">
+        
+            <div class="blog-title header-element">
+                <a href="/">lhead&#39;s Studio.</a>
+            </div>
+            <div class="post-title header-element">
+                <a href="#" class="post-name">爬坑记录：Mac根目录添加软链，修改synthetic.conf导致无法进入系统</a>
+            </div>
+        </div>
+    
 </header>
 
         <!-- fixed footer -->
@@ -273,24 +290,74 @@
 
 
 
+    height:50vh;
+
 ">
     
     <!-- 主页  -->
     
+        
+    <!-- 404页  -->
+    
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+                爬坑记录：Mac根目录添加软链，修改synthetic.conf导致无法进入系统
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+                
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页 meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+    
+</div>
+
+                
+                <!-- 文章字数统计 -->
+                
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2023/10/07</span>
+                    <!-- busuanzi -->
+                    
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -420,75 +487,79 @@
 
             <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
             <div class="container container-unloaded">
-                <main class="main index-page">
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/10/07/git-stash/">
-                
-                <span class="abstract-title-text">Git：召回丢失的git stash内容</span>
-            </a>
-            <div class="abstract-content">
-                背景因为手欠把备份的stash内容提前删除了，本地的代码还还原了，好几天的开发成功付之一炬。灵机一动，git是否存在找回误删代码的功能呢？于是有了本文。
-方案主要是使用fsck命令：
-1git fsck --lost-found
+                <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="Mac-OS根目录"><a href="#Mac-OS根目录" class="headerlink" title="Mac OS根目录"></a>Mac OS根目录</h2><p>Mac OS 自从10.15开始不允许在根目录添加&#x2F;修改文件了。当时我的解决方案是关闭系统保护SIP，并在根目录创建所需目录的软链（&#x2F;data），使用上倒是没什么问题，不过毕竟方法略微繁琐，并且也不是苹果推荐的做法。正好升级旧MacBook时软链文件被移除了，决定这次使用苹果推荐的方案。</p>
+<h2 id="synthetic-conf"><a href="#synthetic-conf" class="headerlink" title="synthetic.conf"></a>synthetic.conf</h2><p>synthetic.conf文件是官方提供的在根目录添加软链的配置文件，格式如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data	/xxx/xxxx/xxx</span><br></pre></td></tr></table></figure>
 
-此命令会列出所有 dangling commit，包含一个 commitId，如果太过久远不属于 dangling commit，就不能找回了。由于没有列出stash时的描述，需要逐个尝试，使用show命令展示内容：
-1git show commitId
+<p>这样就会创建一个名为data的软链，真身地址在&#x2F;xxx&#x2F;xxxx&#x2F;xxx，注意中间必须是<strong>Tab</strong>，不能是空格。</p>
+<p>按照我的实际情况，我配置如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data	~/data</span><br></pre></td></tr></table></figure>
 
-找到后应用即可：
-1git stash apply commitId
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/10/07">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/10/07</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/10/07/synthetic/">
-                
-                <span class="abstract-title-text">爬坑记录：Mac根目录添加软链，修改synthetic.conf导致无法进入系统</span>
-            </a>
-            <div class="abstract-content">
-                Mac OS根目录Mac OS 自从10.15开始不允许在根目录添加&#x2F;修改文件了。当时我的解决方案是关闭系统保护SIP，并在根目录创建所需目录的软链（&#x2F;data），使用上倒是没什么问题，不过毕竟方法略微繁琐，并且也不是苹果推荐的做法。正好升级旧MacBook时软链文件被移除了，决定这次使用苹果推荐的方案。
-synthetic.confsynthetic.conf文件是官方提供的在根目录添加软链的配置文件，格式如下：
-1data	/xxx/xxxx/xxx
+<p>配置后需要重启生效，于是直接先重启。</p>
+<h2 id="波折"><a href="#波折" class="headerlink" title="波折"></a>波折</h2><p>重启后，输入登录密码，意外发生了。读条之后黑屏了，并用各国语言写着，启动失败点击重启。显然是synthetic.conf配置的格式出了问题，上网查询，发现真身地址需要以 &#x2F; 开头。</p>
+<p>于是自然想到，进入恢复模式，修改或删除synthetic.conf。于是进入恢复模式，打开了终端。但是etc目录下并没有synthetic.conf这个文件，反复查找，并使用find搜索，依然没有找到。硬盘上的用户数据也看不到，基本只有 “Mac Base OS” 数据。</p>
+<p>本来想要放弃了，干脆重装系统算了，不过转念一想，重装系统大概率配置文件不会被覆盖，也不解决问题。</p>
+<h2 id="转折"><a href="#转折" class="headerlink" title="转折"></a>转折</h2><p>转折出现在我看到恢复模式下有个功能是连接另一台Mac，并以对方的硬盘启动，然后就可以删除自己这个硬盘上的文件了。方案应该是可行，不过手头没有没有lightning线，这是一种特殊的线，不是iPhone上使用的那种。不过还是决定试试USB线，果然是不行。</p>
+<p>不过不知道是不是因为做了这个操作，后面在排查目录的时候，发现Macintosh HD同级出现了一个叫 “Macintosh HD - 数据” 的目录，并且硬盘上的文件，包括synthetic.conf也能找到了。</p>
+<p>直接通过 &#x2F;Volumes&#x2F;private&#x2F;etc 就可以访问。后面就简单了，直接修改synthetic.conf，重启，搞定。</p>
+<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>首先是遇到疑难问题不要轻易放弃，比如这个问题如果无脑重装，其实也不解决问题。去借lightning线，能不能借到，耽误多少时间先不说，还可能遇到其他坑。</p>
+<p>所以还是删除&#x2F;修改出错的配置文件最靠谱，也最合理，理论上是不应该做不到的。要不写错个软链配置就启动不了，这系统也太不健壮了。</p>
+<p>不过，这里还有个插曲，在终端里改配置的时候，把&#x2F;Users写成了&#x2F;User，重启之后根目录有个软链文件，不过不生效。那为什么写成~&#x2F;data的时候就不能处理成这样呢，想想也挺扯的～</p>
 
-这样就会创建一个名为data的软链，真身地址在&#x2F;xxx&#x2F;xxxx&#x2F;xxx，注意中间...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/10/18">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/10/07</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
+    </article>
+    <!-- license -->
     
-    <!-- paginator  -->
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2023/10/07/git-stash/" title="Git：召回丢失的git stash内容">
+                    <div class="nextTitle">Git：召回丢失的git stash内容</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2023/09/27/hello-world/" title="Hello World">
+                    <div class="prevTitle">Hello World</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- comment -->
+    
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+
+            
+
+            
+
+            
+
+            <!-- utteranc评论 -->
+
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+
+            
+            
+
+            
+
+        </div>
+    
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    
+    <!-- Mathjax -->
     
 </main>
 
@@ -579,6 +650,23 @@ synthetic.confsynthetic.conf文件是官方提供的在根目录添加软链的�
 
         </div>
         <!-- toc -->
+        
+            <div class="toc-wrapper toc-wrapper-loding" style=
+
+
+
+
+
+
+
+    top:50vh;
+
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mac-OS%E6%A0%B9%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">Mac OS根目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#synthetic-conf"><span class="toc-number">2.</span> <span class="toc-text">synthetic.conf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A2%E6%8A%98"><span class="toc-number">3.</span> <span class="toc-text">波折</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AC%E6%8A%98"><span class="toc-number">4.</span> <span class="toc-text">转折</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%84%9F%E6%83%B3"><span class="toc-number">5.</span> <span class="toc-text">感想</span></a></li></ol>
+            </div>
         
         <!-- sidebar -->
         <div class="sidebar sidebar-hide">
@@ -723,6 +811,8 @@ synthetic.confsynthetic.conf文件是官方提供的在根目录添加软链的�
         <!-- CNZZ -->
         
         <!-- async load share.js -->
+        
+            <script src="/scripts/share.js?v=20211217" async></script>
         
         <!-- mermaid -->
         

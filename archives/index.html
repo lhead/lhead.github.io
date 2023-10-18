@@ -464,6 +464,37 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2023/10/07/synthetic/">
+                
+                <span class="abstract-title-text">爬坑记录：Mac根目录添加软链，修改synthetic.conf导致无法进入系统</span>
+            </a>
+            <div class="abstract-content">
+                Mac OS根目录Mac OS 自从10.15开始不允许在根目录添加&#x2F;修改文件了。当时我的解决方案是关闭系统保护SIP，并在根目录创建所需目录的软链（&#x2F;data），使用上倒是没什么问题，不过毕竟方法略微繁琐，并且也不是苹果推荐的做法。正好升级旧MacBook时软链文件被移除了，决定这次使用苹果推荐的方案。
+synthetic.confsynthetic.conf文件是官方提供的在根目录添加软链的配置文件，格式如下：
+1data	/xxx/xxxx/xxx
+
+这样就会创建一个名为data的软链，真身地址在&#x2F;xxx&#x2F;xxxx&#x2F;xxx，注意中间...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/10/18">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/10/07</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2023/09/27/hello-world/">
                 
                 <span class="abstract-title-text">Hello World</span>
@@ -636,7 +667,18 @@ libstdc++首先是报错找不到libstdc++.6.0.9.dylib。这个不新鲜，最�
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -647,7 +689,7 @@ libstdc++首先是报错找不到libstdc++.6.0.9.dylib。这个不新鲜，最�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 3
+        Total : 4
         </div>
         <!-- search  -->
         
@@ -665,6 +707,12 @@ libstdc++首先是报错找不到libstdc++.6.0.9.dylib。这个不新鲜，最�
         <li class="archive-post-item">
             <span class="archive-post-date">10/07</span>
             <a class="archive-post-title" href="/2023/10/07/git-stash/">Git：召回丢失的git stash内容</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/07</span>
+            <a class="archive-post-title" href="/2023/10/07/synthetic/">爬坑记录：Mac根目录添加软链，修改synthetic.conf导致无法进入系统</a>
         </li>
     
         
