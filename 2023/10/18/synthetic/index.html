@@ -27,7 +27,7 @@
 <meta property="og:description" content="Mac OS根目录Mac OS 自从10.15开始不允许在根目录添加或修改文件了。当时我的解决方案是关闭系统保护SIP，并在根目录创建所需目录的软链，使用上倒是没什么问题，不过毕竟方法略微繁琐，并且也不是苹果推荐的做法。正好升级旧MacBook时软链文件被移除了，决定这次使用苹果推荐的方案。 synthetic.confsynthetic.conf文件是官方提供的在根目录添加软链的配置文件，格式如">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-10-18T09:05:23.441Z">
-<meta property="article:modified_time" content="2023-10-18T09:15:14.929Z">
+<meta property="article:modified_time" content="2023-10-18T09:31:46.195Z">
 <meta property="article:author" content="lhead">
 <meta name="twitter:card" content="summary">
     <meta http-equiv="Cache-control" content="no-cache">
@@ -506,7 +506,8 @@
 <p>本来想要放弃了，干脆重装系统算了，不过转念一想，重装系统大概率配置文件不会被覆盖，也不解决问题。</p>
 <h2 id="转折"><a href="#转折" class="headerlink" title="转折"></a>转折</h2><p>转折出现在我看到恢复模式下有个功能是连接另一台Mac，并以对方的硬盘启动，然后就可以删除自己这个硬盘上的文件了。方案应该是可行，不过手头没有没有lightning线，这是一种很老的，特殊的线，不是iPhone上使用的那种。不过还是决定试试USB线，果然不行。</p>
 <p>不过不知道是不是因为做了这个操作，后面在排查目录的时候，发现Macintosh HD同级出现了一个叫 “Macintosh HD - 数据” 的目录，并且硬盘上的文件，包括synthetic.conf也能找到了。</p>
-<p>直接通过 &#x2F;Volumes&#x2F;private&#x2F;etc 就可以访问。后面就简单了，直接修改synthetic.conf，重启，搞定。</p>
+<p>直接通过 &#x2F;Volumes&#x2F;Macintosh\ HD&#x2F;private&#x2F;etc 就可以访问。Macintosh HD 和 Macintosh HD - 数据 其实都可以，而且通过在其他设备实验，Macintosh HD - 数据这个目录应该上来就有，之前没出现的原因不明。</p>
+<p>后面就简单了，直接修改synthetic.conf，重启，搞定。</p>
 <h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>首先是遇到疑难问题不要轻易放弃，比如这个问题如果无脑重装，其实也不解决问题。去借lightning线，能不能借到，耽误多少时间先不说，还可能遇到其他坑。</p>
 <p>所以还是删除或修改出错的配置文件最靠谱，也最合理，理论上是不应该做不到的。要不然写错个软链配置就启动不了，这系统也太不健壮了。</p>
 <p>不过，这里还有个插曲，在终端里改配置的时候，把&#x2F;Users写成了&#x2F;User，重启之后根目录有个软链文件，不过不生效。那为什么写成~&#x2F;data的时候就不能处理成这样呢，想想也是挺扯的。</p>
