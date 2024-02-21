@@ -285,7 +285,7 @@
     <!-- 文章页  -->
     
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpeg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
@@ -444,6 +444,35 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2024/02/21/luaconf/">
+                
+                <span class="abstract-title-text">头文件包含引发的缓冲区溢出闪退</span>
+            </a>
+            <div class="abstract-content">
+                Windows项目公司项目有一个专门用来测试的Windows端，是单独做的VS工程，很多SDK接口没有，不过基本功能没问题。但是在Lua报错展示堆栈的时候会闪退，报缓冲区溢出。一个报错应该没有多少数据量，而且用的也都是一些api，况且其他平台没有问题，于是花时间研究了一下。
+问题的定位报错定位到了出错的函数，但没有定位到具体哪一行。通过排查代码，发现访问数组以及stringstream等都没问题，最终定位在了对lua_Debug结构体写入的地方。
+试了一下，如果把lua_Debug分配在堆上就没有问题了，而如果分配在栈上，则会在针对栈上的缓冲区溢出cookie检查时报错。当然这并不解决问...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/02/21">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2024/02/21</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2023/10/18/synthetic/">
                 
                 <span class="abstract-title-text">爬坑记录：使用synthetic.conf在Mac根目录添加软链，格式错误无法进入系统</span>
@@ -572,7 +601,7 @@ Run server1$ hexo ...
                 <!-- profile -->
                 
                     <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/Misaka.jpg />
+    <img class="profile-avatar" alt="avatar" src= /avatar/yakushiji-ryoko-4.jpeg />
     <div class="profile-name">lhead</div>
     
         <div class="profile-signature">
@@ -773,7 +802,18 @@ Run server1$ hexo ...
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -792,7 +832,7 @@ Run server1$ hexo ...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 4
+        Total : 5
         </div>
         <!-- search  -->
         
@@ -802,6 +842,21 @@ Run server1$ hexo ...
     
         
             
+            
+            <div class="archive-year"> 2024 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2024/02/21/luaconf/">头文件包含引发的缓冲区溢出闪退</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
             
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
